@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import User from "./User";
+import {connect} from "react-redux"
 
 
 function UserList(props) {
@@ -19,4 +20,10 @@ function UserList(props) {
   );
 }
 
-export default UserList;
+const mapStateToProps = (state) => {
+  return {
+    users: state.users
+  }
+}
+
+export default connect(mapStateToProps) (UserList);
