@@ -1,13 +1,16 @@
 const initialState = {
-    users: [
-        {name: "Kwame", email: "kwame@gmail.com"},
-        {name: "Kwame", email: "kwame@gmail.com"},
-        {name: "Kwame", email: "kwame@gmail.com"}
-    ]
-} 
+  users: [],
+};
 
 const userReducer = (state = initialState, action) => {
-    return state
-}
+  switch (action.type) {
+    case "ADD_USER":
+    //   console.log(action.payload);
+    return {...state, users: [...state.users, action.payload] }
+
+      default:
+          return state;
+  }
+};
 
 export default userReducer;

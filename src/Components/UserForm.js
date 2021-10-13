@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
+//importing the action
+import { addUser } from "../actions/userAction"
+import { connect } from "react-redux"
+
+
 
 function UserForm(props) {
   const [name, setName] = useState("");
@@ -17,7 +22,7 @@ function UserForm(props) {
         id: uuid(),
       };
 
-      props.addUser(newUser);
+      props.addNewUser(newUser);
 
       setName("");
       setEmail("");
@@ -36,4 +41,9 @@ function UserForm(props) {
   );
 }
 
-export default UserForm;
+//to loop through to the props
+const mapDispatchToProps = {
+  addNewUser: addUser
+};
+
+export default connect(null, mapDispatchToProps) (UserForm);
