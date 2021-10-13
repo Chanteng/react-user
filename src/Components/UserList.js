@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import User from "./User";
-import { Modal, Button } from "react-bootstrap";
+
 
 function UserList(props) {
   return (
@@ -11,6 +11,7 @@ function UserList(props) {
             user={user}
             key={user.id}
             deleteUser={props.deleteUser}
+            editUser={props.editUser}
           />
         );
       })}

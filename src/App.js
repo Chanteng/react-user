@@ -11,6 +11,19 @@ function App() {
   }
 
 
+  function editUser(newDetails, userId) {
+    const editedUser = users.map((user) => {
+      if (userId === user.id) {
+        return newDetails;
+      } else {
+        return user;
+      }
+    });
+
+    setUsers(editedUser);
+  }
+
+
   function deleteUser(userId) {
     //loops through the users state and removes the user with the same id
     const filteredUsers = users.filter((user) => {
@@ -24,7 +37,7 @@ function App() {
   return (
     <div>
       <UserForm addUser={addUser} />
-      <UserList users={users} deleteUser={deleteUser}  />
+      <UserList users={users} deleteUser={deleteUser} editUser ={editUser}  />
     </div>
   );
 }
