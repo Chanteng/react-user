@@ -4,6 +4,7 @@ import {connect} from "react-redux"
 
 
 function UserList(props) {
+  console.log(props);
   return (
     <div>
       {props.users.map((user) => {

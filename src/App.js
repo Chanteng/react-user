@@ -37,7 +37,7 @@ function App() {
   return (
     <div>
       <UserForm />
-      <UserList users={users} deleteUser={deleteUser} editUser ={editUser}  />
+      <UserList deleteUser={deleteUser} editUser ={editUser}  />
     </div>
   );
 }
