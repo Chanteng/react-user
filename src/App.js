@@ -6,38 +6,38 @@ import "./App.css"
 function App() {
   const [users, setUsers] = useState([]);
 
-  // function addUser(user) {
-  //   setUsers([...users, user]);
+  // // function addUser(user) {
+  // //   setUsers([...users, user]);
+  // // }
+
+
+  // function editUser(newDetails, userId) {
+  //   const editedUser = users.map((user) => {
+  //     if (userId === user.id) {
+  //       return newDetails;
+  //     } else {
+  //       return user;
+  //     }
+  //   });
+
+  //   setUsers(editUser);
   // }
 
 
-  function editUser(newDetails, userId) {
-    const editedUser = users.map((user) => {
-      if (userId === user.id) {
-        return newDetails;
-      } else {
-        return user;
-      }
-    });
+  // function deleteUser(userId) {
+  //   //loops through the users state and removes the user with the same id
+  //   const filteredUsers = users.filter((user) => {
+  //     return userId !== user.id;
+  //   });
 
-    setUsers(editedUser);
-  }
-
-
-  function deleteUser(userId) {
-    //loops through the users state and removes the user with the same id
-    const filteredUsers = users.filter((user) => {
-      return userId !== user.id;
-    });
-
-    //sets the users state to the filtered users array
-    setUsers(filteredUsers);
-  }
+  //   //sets the users state to the filtered users array
+  //   setUsers(filteredUsers);
+  // }
 
   return (
     <div>
       <UserForm />
-      <UserList deleteUser={deleteUser} editUser ={editUser}  />
+      <UserList/>
     </div>
   );
 }

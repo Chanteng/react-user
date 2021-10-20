@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import {editUser} from "../actions/userAction"
+import {connect} from "react-redux"
 
 
 function EditUser(props) {
   const [name, setName] = useState(props.user.name);
-  const [email, setEmail] = useState(props.user.number);
-  const [gen, setGen] = useState(props.user.location);
+  const [email, setEmail] = useState(props.user.email);
+  const [gen, setGen] = useState(props.user.gen);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -28,7 +30,7 @@ function EditUser(props) {
       id: props.user.id,
     };
 
-    props.editUser(editedUser, props.user.id);
+    props.editUser(props.user.id, editedUser);
     props.toggleModal();
   }
 
@@ -74,4 +76,8 @@ function EditUser(props) {
   );
 }
 
-export default EditUser;
+const mapDispatchToProps = {
+  editUser,
+}
+
+export default connect(null, mapDispatchToProps) (EditUser);

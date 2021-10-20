@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import EditUser from "./EditUser";
+import { deleteUser } from "../actions/userAction"
+import { connect } from "react-redux"
+
 
 
 function User(props) {
@@ -38,7 +41,6 @@ function User(props) {
 
           <EditUser
             user={user}
-            editUser={props.editUser}
             toggleModal={toggleModal}
           />
         </Modal.Body>
@@ -49,4 +51,8 @@ function User(props) {
   );
 }
 
-export default User;
+const mapDispatchToProps = {
+  deleteUser,
+}
+
+export default connect(null, mapDispatchToProps)(User);
