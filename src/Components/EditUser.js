@@ -43,7 +43,7 @@ function EditUser(props) {
         <Form.Label>Name</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter name"
+          placeholder="Enter Name"
           value={name}
           onChange={(e) => handleNameChange(e)}
         />
@@ -53,7 +53,7 @@ function EditUser(props) {
         <Form.Label>Email</Form.Label>
         <Form.Control
           name="text"
-          placeholder="Enter Number"
+          placeholder="Enter Email"
           value={email}
           onChange={(e) => handleEmailChange(e)}
         />
@@ -63,7 +63,7 @@ function EditUser(props) {
         <Form.Label>Gen</Form.Label>
         <Form.Control
           name="text"
-          placeholder="Enter Location"
+          placeholder="Enter Gen"
           value={gen}
           onChange={(e) => handleGenChange(e)}
         />

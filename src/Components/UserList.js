@@ -6,20 +6,16 @@ import {connect} from "react-redux"
 function UserList(props) {
   return (
     <div>
-     return (
-    <div>
       {props.users.map((user) => {
+        console.log(user.id);
         return (
           <User
             user={user}
             key={user.id}
-            // deleteUser={props.deleteUser}
-            // editUser={props.editUser}
+					//	editUser={props.editUser}
           />
         );
       })}
-    </div>
-  );
     </div>
   );
 }
@@ -27,10 +23,8 @@ function UserList(props) {
 
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
-    users: state.users,
-    // users: state.users.users
+    users: state.users
   }
 }
 
