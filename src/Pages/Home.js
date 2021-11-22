@@ -1,34 +1,29 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
 import UserForm from "../Components/UserForm";
-import { Container, Row, Col } from "react-bootstrap";
 import UserList from "../Components/UserList";
-import { signOut } from "../actions/authActions";
-import { connect } from "react-redux";
+import {getAllUsers} from "../actions/userAction"
+import {connect} from "react-redux"
 
-const Home = (props) => {
+
+
+function Home(props) {
+  const [users, setUsers] = useState([]);
+  useEffect(()=>{
+    props.getAllUsers();
+  }, [])
+
+
   return (
     <div>
-      <Container fluid style={{ marginTop: "5 rem" }}>
-        <Row>
-          {/* <button onClick={() => props.signOut()}>Sign out</button> */}
-          <Col md="5">
-            <UserForm />
-          </Col>
-
-          <Col>
-            <UserList
-            />
-          </Col>
-        </Row>
-      </Container>
+      <UserForm />
+      <UserList/>
     </div>
   );
-};
+}
 
 const mapDispatchToProps = {
-  signOut,
+	getAllUsers,
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+
+export default connect(null, mapDispatchToProps) (Home);

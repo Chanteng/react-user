@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from "react";
-import UserForm from "./Components/UserForm";
-import UserList from "./Components/UserList";
-import "./App.css"
-import {getAllUsers} from "./actions/userAction"
-import {connect} from "react-redux"
+import React from 'react'
+import { BrowserRouter, Route} from "react-router-dom"
+import Home from './Pages/Home'
+import Register from "./Pages/Register"
 
-
-
-function App(props) {
-  const [users, setUsers] = useState([]);
-  useEffect(()=>{
-    props.getAllUsers();
-  }, [])
-
-
-  return (
-    <div>
-      <UserForm />
-      <UserList/>
-    </div>
-  );
+function App () {
+    return (
+        <BrowserRouter>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/register" component={Register}/>    
+        </BrowserRouter>
+    )
 }
 
-const mapDispatchToProps = {
-	getAllUsers,
-};
-
-
-export default connect(null, mapDispatchToProps) (App);
+export default App
