@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import UserForm from "./Components/UserForm";
-import UserList from "./Components/UserList";
+import React, { useState, useEffect } from "react";
 import "./App.css"
 import {getAllUsers} from "./actions/userAction"
 import {connect} from "react-redux"
+import UserList from "./Components/UserList";
+import UserForm from "./Components/UserForm";
 
 
 function App(props) {
   const [users, setUsers] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     props.getAllUsers();
   }, [])
 
-  // // function addUser(user) {
-  // //   setUsers([...users, user]);
-  // // }
+  // function addUser(user) {
+  //   setUsers([...users, user]);
+  // }
 
 
   // function editUser(newDetails, userId) {
@@ -26,31 +26,29 @@ function App(props) {
   //     }
   //   });
 
-  //   setUsers(editUser);
+  //   setUsers(editedUser);
   // }
 
 
   // function deleteUser(userId) {
-  //   //loops through the users state and removes the user with the same id
+
   //   const filteredUsers = users.filter((user) => {
   //     return userId !== user.id;
   //   });
 
-  //   //sets the users state to the filtered users array
   //   setUsers(filteredUsers);
   // }
 
   return (
     <div>
-      <UserForm />
-      <UserList/>
+      <UserForm  />
+      <UserList  />
     </div>
   );
 }
 
 const mapDispatchToProps = {
-	getAllUsers,
-};
-
+  getAllUsers,
+}
 
 export default connect(null, mapDispatchToProps) (App);
