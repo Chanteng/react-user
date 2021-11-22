@@ -21,6 +21,14 @@ function Home(props) {
   );
 }
 
+// const mapStateToProps = (state) => {
+//   console.log(state)
+//   return {
+//     users: state.user,
+//     users: state.usersState.user,
+//   }
+// }
+
 const mapDispatchToProps = {
 	getAllUsers,
 };
