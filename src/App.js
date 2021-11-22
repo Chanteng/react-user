@@ -5,6 +5,7 @@ import Login from './Pages/Login'
 import Register from "./Pages/Register"
 import ProtectRoute from "./Components/ProtectRoute"
 
+
 function App () {
     return (
         <BrowserRouter>
@@ -13,6 +14,7 @@ function App () {
             <Route exact path="/login" component={Login}/>  
         </BrowserRouter>
     )
+
 }
 
 export default App
