@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Button } from "react-bootstrap";
 import { connect } from "react-redux"
 //import { registerWithEmail } from "../actions/userAction"
-import {registerWithEmail} from "../actions/authAction"
+import {registerWithEmail, loginWithGoogle} from "../actions/authAction"
 
 
 function Register(props) {
@@ -31,6 +31,12 @@ function Register(props) {
             <hr />
 
             <Button type="submit">Join</Button>
+
+            <hr />
+
+            <button onClick={props.loginWithGoogle}>
+				<img src="http://pngimg.com/uploads/google/google_PNG19644.png" width="100" />
+			</button>
         </Form>
         </>
     )
@@ -41,7 +47,7 @@ const mapStateToProps = () => {
 }
 
 const mapDispatchToProps = {
-    registerWithEmail,
+    registerWithEmail, loginWithGoogle
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (Register);
