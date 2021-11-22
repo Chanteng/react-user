@@ -44,3 +44,18 @@ export const loginWithGoogle = () => {
         })
     }
 }
+
+export const logoutUser = () => {
+    return (dispatch, state, {getFirebase}) => {
+        let firebase = getFirebase()
+        firebase
+        .auth()
+        .signOut()
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    } 
+}

@@ -6,6 +6,8 @@ import {loginWithEmail, loginWithGoogle} from "../actions/authAction"
 
 
 function Login(props) {
+	if (!props.auth.isLoaded) return null;
+	if (!props.auth.isEmpty) props.history.push("/");
 
     const handleSubmit=(e)=>{
         e.preventDefault()
@@ -42,8 +44,10 @@ function Login(props) {
     )
 }
 
-const mapStateToProps = () => {
-
+const mapStateToProps = (state) => {
+	return {
+		auth: state.firebase.auth,
+	}
 }
 
 const mapDispatchToProps = {
