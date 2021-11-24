@@ -1,10 +1,10 @@
-
 import React, { useEffect, useState } from "react";
 import UserForm from "../Components/UserForm";
 import UserList from "../Components/UserList";
 import {getAllUsers} from "../actions/userAction"
 import {connect} from "react-redux"
-
+import {Button} from "react-bootstrap"
+import {logoutUser} from "../actions/authAction"
 
 
 function Home(props) {
@@ -16,14 +16,17 @@ function Home(props) {
 
   return (
     <div>
+     
       <UserForm />
-      <UserList/>
+      <UserList/> <br />
+      <Button onClick={props.logoutUser} >Log out</Button>
     </div>
   );
 }
 
+
 const mapDispatchToProps = {
-	getAllUsers,
+	getAllUsers, logoutUser
 };
 
 
