@@ -1,3 +1,4 @@
+
 export const registerWithEmail = (email, password) => {
     return (dispatch, state, {getFirebase}) => {
         let firebase = getFirebase()

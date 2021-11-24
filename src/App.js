@@ -3,7 +3,7 @@ import { BrowserRouter, Route} from "react-router-dom"
 import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Register from "./Pages/Register"
-import ProtectRoute from "./Components/ProtectRoute"
+import ProtectRoute from "../Components/ProtectRoute"
 
 
 function App () {
